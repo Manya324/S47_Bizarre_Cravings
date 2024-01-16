@@ -1,5 +1,3 @@
-Project Name: BizarreCravings
-Idea: The idea is to show the list of the weirdest and strangest things people have eaten all over the world. The app will show the things listed out by different users.
-Features: 
-1. The app will show the image of the person along with the thing he or she ate and also the description or the background history of the person eating it.
-2. The user would be able to see the lists made by different users.
+The app will allow users to view and explore a collection of unusual and unique things from all over the world, as listed by other users.
+Each item  will be accompanied by an image of the person who consumed it, as well as a brief description or background information about the food or the individual. 
+Users will also be able to browse through different lists of bizarre food items curated by other users.
