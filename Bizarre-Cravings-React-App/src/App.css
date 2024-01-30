@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+
+body {
+  background-image: url("https://www.onlinelogomaker.com/blog/wp-content/uploads/2019/08/0ece63b3b1eb0481735156fa8a73e85e.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+
+.main {
+  background-color: black;
+  color: white;
+  width: 60vw;
+  height: 70vh;
+  margin-left: 20vw;
+  margin-top: 20vh;
+  opacity: 0.9;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3),
+    10px 10px 10px rgba(255, 255, 255, 0.1);
+}
+
+.h1 {
+  text-align: center;
+  margin-top: 10%;
+  font-size: 1.7vw;
+  position: relative;
+  top: 20px;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.info {
+  width: 80%;
+  margin-left: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.btn {
+  padding: 1%;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
