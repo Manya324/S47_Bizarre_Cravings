@@ -1,0 +1,34 @@
+[
+ {
+    "id": 1,
+    "name": "Ashes",
+    "person": "Casie Powell",
+    "country": "USA",
+    "imageURL": "https://im.indiatimes.in/content/2021/Oct/ashes_61714b441932d.jpg?w=400&h=300&cc=1",
+    "description": "Casey Powell, a woman from the United States, was addicted to eating her husband's ashes."
+  },
+  {
+    "id": 2,
+    "name": "Glass",
+    "person": "Michel Lotito",
+    "country": "France",
+    "imageURL": "https://imgs.search.brave.com/BEqbHpG3fpaHgntJmiaKUaSMgutdGI2WYrurHYe-2b4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/Z3Vpbm5lc3N3b3Js/ZHJlY29yZHMuY29t/L0ltYWdlcy9hbi1v/bGRlci1taWNoZWwt/bG90aXRvLXNpdHRp/bmctZG93bi1mb3It/ZGlubmVyLWluLWZy/b250LW9mLWEtcGxh/bmVfdGNtMjUtNzIy/NjUxLmpwZw",
+    "description": "Michel Lotito, also known as 'Mr. Eat-All,' consumed metal, glass, rubber, and other indigestible materials. He had a rare condition known as pica."
+  },
+  {
+    "id": 3,
+    "name": "Metal",
+    "person": "Eklavya Kale",
+    "country": "India",
+    "imageURL": "https://imgs.search.brave.com/sL3zDw3BDRU7ht5To-5t9B5LLkE2Dr_U8Qx2FwvtDk8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy83MDEv/cC0xLWVhdGluZy1u/YWlscy0xNTEyMDQ5/MjU3LmpwZz9yZXNp/emU9NjQwOio",
+    "description": "A man from India gained media attention for his habit of eating metal, including knives and forks."
+  },
+  {
+    "id": 4,
+    "name": "Bricks",
+    "person": "Pakkirappa Hunagundi",
+    "country": "India",
+    "imageURL": "https://imgs.search.brave.com/hDNvtG3EHGAmpO4051Db7iYMi1JbhJ5NQMm5eGqSt-Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmRh/aWx5bWFpbC5jby51/ay9pL3BpeC8yMDE0/LzA0LzAyL2FydGlj/bGUtMjU5NTA4Ny0x/Q0MyQzNBMzAwMDAw/NTc4LTgzNV82MzR4/NDIzLmpwZw",
+    "description": "A man from India claimed to have been eating bricks, gravel, and mud for over 20 years due to a rare medical condition."
+  }
+]
