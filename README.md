@@ -7,3 +7,4 @@ Features:
 2. The user would be able to see the lists made by different users.
 
 Deployed link: https://bizarre-cravings.pages.dev/
+
