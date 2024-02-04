@@ -1,9 +1,20 @@
 import React from "react";
-import data from "./ListData.json";
+import { useEffect } from "react";
+import axios from 'axios';
 import "../index.css";
 
 function Data() {
-  return (
+
+  const [data , setData ] = React.useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/')
+    .then((res) => setData(res.data))
+    .catch((err) => console.log(err))
+    console.log(data)
+  },[])
+
+   return (
     <div className="content">
       {data.map((item, id) => {
         return (
@@ -14,7 +25,7 @@ function Data() {
                 <h2 className="person-name">Person : {item.person}</h2>
                 <h3 className="origin">Origin : {item.country}</h3>
               </div>
-              <img className="images" src={item.imageURL}></img>
+              <img className="images" src={item.imageUrl}></img>
               </div>
             <p className="description">{item.description}</p>
           </div>
