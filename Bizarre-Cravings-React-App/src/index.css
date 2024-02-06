@@ -7,6 +7,55 @@ body {
   overflow: auto;
 }
 
+.heading {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin: 10px;
+}
+
+.btn{
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+.add-page {
+  margin-top: 2vh;
+}
+
+.inp {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.add-btn {
+  margin-left: 47vw;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 2px #000000;
+  cursor: pointer;
+
+}
+
+.add-btn:hover {
+  background-color: black;
+  color: white;
+}
+
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(50% - 20px), 1fr));
@@ -50,6 +99,10 @@ body {
 .description {
   font-size: 19px;
   margin-top: 20px;
+}
+img {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {

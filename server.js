@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const {MongoClient} = require("mongodb")
-
+const bodyParser = require("body-parser");
 
 app.use(cors());
+app.use(bodyParser.json());
 
 const uri = "mongodb+srv://Manya_Jain:Gunnu324@cluster1.fvkwdo1.mongodb.net/?retryWrites=true&w=majority";
 
@@ -19,6 +20,12 @@ client.connect()
       const result = await collection.find({}).toArray();
       res.json(result);
     })
+
+    app.post('/',async (req,res) => {
+      const {serial, item,person,country,description,imageUrl} = req.body;
+      const result = await collection.insertOne({serial, item,person,country,description,imageUrl});
+      res.json(result);
+    })
   })
   .catch(err => {
     console.log('Error connecting to MongoDB Atlas:', err);
@@ -29,3 +36,4 @@ client.connect()
 app.listen(5000, ()=> {
   console.log(`Server is running on 5000`);
 });
+
