@@ -22,16 +22,50 @@ body {
   flex-direction: column;
   color: white;
   margin: 10px;
+  border-radius: 10px;
+  height: 60vh;
+  width: 50vw;
+  margin-left: 25vw;
 }
 
-.btn{
+.input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 40vw;
+}
+
+.btn {
   margin-top: 10px;
   cursor: pointer;
-
 }
 
 .add-page {
   margin-top: 2vh;
+}
+
+.lower{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.update-btn,
+.delete-btn {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.delete-btn:hover {
+  background-color: rgb(64, 64, 64);
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: rgb(64, 64, 64);
+  color: white;
 }
 
 .inp {
@@ -48,7 +82,6 @@ body {
   border: none;
   box-shadow: 2px 2px 2px #000000;
   cursor: pointer;
-
 }
 
 .add-btn:hover {
