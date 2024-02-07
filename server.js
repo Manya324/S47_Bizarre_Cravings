@@ -1,39 +1,65 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const {MongoClient} = require("mongodb")
-const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const Modal = require("./Schema/Data.model");
 
+app.use(express.json());
 app.use(cors());
-app.use(bodyParser.json());
 
-const uri = "mongodb+srv://Manya_Jain:Gunnu324@cluster1.fvkwdo1.mongodb.net/?retryWrites=true&w=majority";
+const uri =
+  "mongodb+srv://Manya_Jain:Gunnu324@cluster1.fvkwdo1.mongodb.net/?retryWrites=true&w=majority";
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect()
-  .then(() => {
-    console.log('Connected to MongoDB Atlas');
-    const database = client.db('listData');
-    const collection = database.collection('Weird Items eaten list');
-
-    app.get('/', async (req,res) => {
-      const result = await collection.find({}).toArray();
-      res.json(result);
-    })
-
-    app.post('/',async (req,res) => {
-      const {serial, item,person,country,description,imageUrl} = req.body;
-      const result = await collection.insertOne({serial, item,person,country,description,imageUrl});
-      res.json(result);
-    })
+mongoose
+  .connect(uri, {
+    dbName: "listData",
   })
-  .catch(err => {
-    console.log('Error connecting to MongoDB Atlas:', err);
-  });
+  .then(() => console.log("DB Connected"));
 
-
-
-app.listen(5000, ()=> {
-  console.log(`Server is running on 5000`);
+app.get("/", (req, res) => {
+  Modal.find({})
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
 });
 
+app.post("/", (req, res) => {
+  Modal.create(req.body)
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.get("/getItem/:id", (req, res) => {
+  const id = req.params.id;
+  Modal.findById({ _id: id })
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.put("/updateItem/:id", (req, res) => {
+  const id = req.params.id;
+  Modal.findByIdAndUpdate(
+    { _id: id },
+    {
+      serial: req.body.serial,
+      item: req.body.item,
+      person: req.body.person,
+      country: req.body.country,
+      description: req.body.description,
+      imageUrl: req.body.imageUrl,
+    },
+    { new: true }
+  )
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.delete("/deleteItem/:id", (req, res) => {
+  const id = req.params.id;
+  Modal.findByIdAndDelete(id)
+    .then((users) => res.json(users))
+    .catch((err) => res.json(err));
+});
+
+app.listen(5000, () => {
+  console.log(`Server is running on 5000`);
+});

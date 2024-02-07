@@ -35,6 +35,7 @@ function NewPage() {
     <div className="add-page">
       <form className="form" onSubmit={(e) => Submit(e)}>
         <h1 className="heading">Add New Item</h1>
+        <div className="input">
         <label htmlFor="">Enter Serial Number:</label>
         <input
         className="inp"
@@ -43,6 +44,8 @@ function NewPage() {
           value={serial}
           onChange={(e) => setSerial(e.target.value)}
         />
+        </div>
+        <div className="input">
         <label htmlFor="">Enter Item:</label>
         <input
           type="text"
@@ -51,7 +54,9 @@ function NewPage() {
           value={item}
           onChange={(e) => setItem(e.target.value)}
         />
-        <label htmlFor="">Enter Person:</label>
+        </div>
+      <div className="input">
+      <label htmlFor="">Enter Person:</label>
         <input
           type="text"
           className="inp"
@@ -59,7 +64,9 @@ function NewPage() {
           value={person}
           onChange={(e) => setPerson(e.target.value)}
         />
-        <label htmlFor="">Enter Country:</label>
+      </div>
+      <div className="input">
+      <label htmlFor="">Enter Country:</label>
         <input
           type="text"
           className="inp"
@@ -67,7 +74,9 @@ function NewPage() {
           value={country}
           onChange={(e) => setCountry(e.target.value)}
         />
-        <label htmlFor="">Enter Description:</label>
+      </div>
+       <div className="input">
+       <label htmlFor="">Enter Description:</label>
         <input
           type="text"
           className="inp"
@@ -75,7 +84,10 @@ function NewPage() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label htmlFor="">Enter Image Url:</label>
+       </div>
+       
+       <div className="input">
+       <label htmlFor="">Enter Image Url:</label>
         <input
           type="text"
           className="inp"
@@ -83,6 +95,7 @@ function NewPage() {
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
         />
+       </div>
         <div>
           <button className="btn" type="submit">Add</button>
         </div>
