@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Modal = require("./Schema/Data.model");
+const { validateCreate } = require('./Validator.js');
 
 app.use(express.json());
 app.use(cors());
@@ -23,6 +24,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+
+  const {error} = validateCreate(req.body);
+
+if (error) {
+console.log(error)
+res.send(error.details)
+}
+res.send("Item Added Successfully!")
+
   Modal.create(req.body)
     .then((users) => res.json(users))
     .catch((err) => res.json(err));
