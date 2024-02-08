@@ -38,6 +38,7 @@ function NewPage() {
         <div className="input">
         <label htmlFor="">Enter Serial Number:</label>
         <input
+        required
         className="inp"
           type="text"
           placeholder="Serial Number"
@@ -48,6 +49,7 @@ function NewPage() {
         <div className="input">
         <label htmlFor="">Enter Item:</label>
         <input
+        required
           type="text"
           className="inp"
           placeholder="Item"
@@ -58,6 +60,7 @@ function NewPage() {
       <div className="input">
       <label htmlFor="">Enter Person:</label>
         <input
+        required
           type="text"
           className="inp"
           placeholder="Person"
@@ -69,6 +72,7 @@ function NewPage() {
       <label htmlFor="">Enter Country:</label>
         <input
           type="text"
+          required
           className="inp"
           placeholder="Country"
           value={country}
@@ -79,6 +83,7 @@ function NewPage() {
        <label htmlFor="">Enter Description:</label>
         <input
           type="text"
+          required
           className="inp"
           placeholder="Description"
           value={description}
@@ -89,8 +94,10 @@ function NewPage() {
        <div className="input">
        <label htmlFor="">Enter Image Url:</label>
         <input
+
           type="text"
           className="inp"
+          required
           placeholder="Image Url"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
