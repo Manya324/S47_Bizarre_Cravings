@@ -16,7 +16,7 @@ function HomePage() {
         </p>
       </div>
       <div className="start">
-        <Link to={"/data"}>
+        <Link to={"/login"}>
           <button className="btn">Let's Go 🚀</button>
         </Link>
       </div>
