@@ -67,6 +67,7 @@ function SignUp() {
         >
           Login
         </button>
+
       </form>
     </div>
   );

@@ -8,6 +8,7 @@ function Data() {
   const [data, setData] = React.useState([]);
   const [userData, setUserData] = React.useState({});
 
+
   useEffect(() => {
     axios
       .get("http://localhost:5000")
@@ -15,6 +16,7 @@ function Data() {
       .catch((err) => console.log(err));
     console.log(data);
   }, []);
+
 
   function cookieNames() {
     const cookieArray = document.cookie.split("; ");
