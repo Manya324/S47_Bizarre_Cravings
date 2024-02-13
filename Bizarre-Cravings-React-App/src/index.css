@@ -119,6 +119,15 @@ label{
   color: white;
 }   
 
+.filter-btn{
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 5px 15px;
+  border: none;
+  box-shadow: 2px 2px 2px #000000;
+  cursor: pointer;
+}
+
 .input{
   padding: 10px;
   border-radius: 10px;
@@ -136,7 +145,7 @@ label{
 }
 
 .add-btn {
-  margin-left: 47vw;
+  margin-left: 42vw;
   padding: 10px;
   border-radius: 5px 15px;
   border: none;
