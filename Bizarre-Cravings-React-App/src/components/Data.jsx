@@ -9,20 +9,6 @@ function Data() {
   const [userData, setUserData] = React.useState({});
 
   useEffect(() => {
-    const getCookie = (name) => {
-      const cookieArray = document.cookie.split("; ");
-      const cookie = cookieArray.find((row) => row.startsWith(name + "="));
-      return cookie ? cookie.split("=")[1] : null;
-    };
-
-    const name = getCookie("name");
-    const email = getCookie("email");
-    const username = getCookie("username");
-
-    setUserData({ name, email, username });
-  }, []);
-
-  useEffect(() => {
     axios
       .get("http://localhost:5000")
       .then((res) => setData(res.data))
@@ -30,14 +16,20 @@ function Data() {
     console.log(data);
   }, []);
 
+  function cookieNames() {
+    const cookieArray = document.cookie.split("; ");
+    const cookie = cookieArray.map((row) => row.split("=")[0]);
+    return cookie;
+  }
+
+  const cookies = cookieNames();
+  console.log(cookies[0]);
   const clearCookie = (name) => {
     document.cookie = `${name}=;expires=Thu, 01 Jan 2000 00:00:01 GMT;path=/;`;
   };
 
   const handleLogOut = () => {
-    clearCookie("name");
-    clearCookie("email");
-    clearCookie("username");
+    clearCookie(cookies[0]);
     console.log("Updated Cookies:", document.cookie);
   };
 
@@ -54,13 +46,34 @@ function Data() {
   return (
     <>
       <div>
-        <nav>
-          <h2 style={{color: "white", textAlign: "flex-start", marginLeft: "30px", marginTop: "30px"}}>Welcome</h2>
-          {userData.name && <p style={{textAlign: "flex-start", marginLeft: "30px", marginTop: "10px"}} className="name">Name: {userData.name}</p>}
-          {userData.email && <p style={{ textAlign: "flex-start", marginLeft: "30px", marginTop: "10px"}} className="name">Email: {userData.email}</p>}
-          {userData.username && <p style={{ textAlign: "flex-start", marginLeft: "30px", marginTop: "10px"}} className="name">Username: {userData.username}</p>}
+        <nav className="navbar">
+          
+          {cookies[0] && (
+            <h2
+              style={{
+                textAlign: "flex-start",
+                marginLeft: "30px",
+                marginTop: "10px",
+              }}
+              className="name"
+            >
+              Welcome {cookies[0]} !
+            </h2>
+          )}
           <Link to="/login">
-            <button className="update-btn" style={{textAlign: "flex-start",marginLeft: "30px", marginTop: "10px"}} onClick={handleLogOut}>Log Out</button>
+            <button
+              className="update-btn"
+              style={{
+                textAlign: "flex-start",
+                marginLeft: "30px",
+                marginRight : "50px",
+                marginTop: "10px",
+                fontweight: "bold",
+              }}
+              onClick={handleLogOut}
+            >
+              Log Out
+            </button>
           </Link>
         </nav>
         <h1 className="heading">Bizarre Cravings</h1>

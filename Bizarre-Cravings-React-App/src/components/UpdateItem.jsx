@@ -50,61 +50,59 @@ function UpdateItem() {
       <div className="add-page">
         <h1 className="heading">Update Item</h1>
         <form className="form" onSubmit={update}>
-          <div className="input">
-            <label>Enter Serial Number:</label>
-            <input
-              type="text"
-              className="inp"
-              value={serial}
-              onChange={(e) => setSerial(e.target.value)}
-            />
+          <div className="main-box">
+            <div className="label">
+              <label>Enter Serial Number:</label>
+              <label>Enter Item:</label>
+              <label>Enter Person:</label>
+              <label>Enter Country:</label>
+              <label>Enter Description:</label>
+              <label>Enter Image Url:</label>
+            </div>
+
+            <div className="input">
+              <input
+                type="text"
+                className="inp"
+                value={serial}
+                onChange={(e) => setSerial(e.target.value)}
+              />
+              <input
+                type="text"
+                className="inp"
+                value={item}
+                onChange={(e) => setItem(e.target.value)}
+              />
+              <input
+                type="text"
+                className="inp"
+                value={person}
+                onChange={(e) => setPerson(e.target.value)}
+              />
+              <input
+                type="text"
+                className="inp"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+              <textarea
+                type="text"
+                className="inp"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <input
+                type="text"
+                className="inp"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="input">
-            <label>Enter Item:</label>
-            <input
-              type="text"
-              className="inp"
-              value={item}
-              onChange={(e) => setItem(e.target.value)}
-            />
-          </div>
-          <div className="input">
-            <label>Enter Person:</label>
-            <input
-              type="text"
-              className="inp"
-              value={person}
-              onChange={(e) => setPerson(e.target.value)}
-            />
-          </div>
-          <div className="input">
-            <label>Enter Country:</label>
-            <input
-              type="text"
-              className="inp"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
-            />
-          </div>
-          <div className="input">
-            <label>Enter Description:</label>
-            <textarea
-              type="text"
-              className="inp"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          <div className="input">
-            <label>Enter Image Url:</label>
-            <input
-              type="text"
-              className="inp"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-            />
-          </div>
-          <button className="update-btn" type="submit">Update</button>
+
+          <button className="update-btn" type="submit">
+            Update
+          </button>
         </form>
       </div>
     </div>
