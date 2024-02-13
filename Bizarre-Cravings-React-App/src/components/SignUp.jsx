@@ -13,7 +13,7 @@ function SignUp() {
         <br />
         <label htmlFor="name">Name:</label>
         <input
-        className="inp"
+          className="inp"
           id="name"
           type="text"
           placeholder="Enter your name"
@@ -21,8 +21,7 @@ function SignUp() {
         />
         <label htmlFor="email">Email:</label>
         <input
-        className="inp"
-
+          className="inp"
           id="email"
           type="email"
           placeholder="Enter your email"
@@ -30,8 +29,7 @@ function SignUp() {
         />
         <label htmlFor="password">Username:</label>
         <input
-        className="inp"
-
+          className="inp"
           id="username"
           type="text"
           placeholder="Enter your username"

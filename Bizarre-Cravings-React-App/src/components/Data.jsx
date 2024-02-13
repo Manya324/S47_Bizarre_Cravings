@@ -8,6 +8,15 @@ function Data() {
   const [data, setData] = React.useState([]);
   const [userData, setUserData] = React.useState({});
 
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err));
+    console.log(data);
+  }, []);
+
   useEffect(() => {
     const getCookie = (name) => {
       const cookieArray = document.cookie.split("; ");
@@ -22,13 +31,7 @@ function Data() {
     setUserData({ name, email, username });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000")
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-    console.log(data);
-  }, []);
+
 
   const clearCookie = (name) => {
     document.cookie = `${name}=;expires=Thu, 01 Jan 2000 00:00:01 GMT;path=/;`;
