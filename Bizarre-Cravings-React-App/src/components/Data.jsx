@@ -6,7 +6,7 @@ import "../index.css";
 
 function Data() {
   const [data, setData] = React.useState([]);
-  const [userData, setUserData] = React.useState({});
+  const  [filteredUser, setFilteredUser] = React.useState("All");
 
 
   useEffect(() => {
@@ -45,6 +45,17 @@ function Data() {
       .catch((err) => console.log(err));
   };
 
+  const handleChange = (e) => {
+    setFilteredUser(e.target.value);
+  }
+
+  const filteredUsers = data.filter((user) => {
+    if (filteredUser === "All") {
+      return user;
+    }else{
+      return user.created_by === filteredUser
+    }
+  })
   return (
     <>
       <div>
@@ -77,14 +88,21 @@ function Data() {
               Log Out
             </button>
           </Link>
+          
         </nav>
         <h1 className="heading">Bizarre Cravings</h1>
         <Link to="/addItem">
           <button className="add-btn">Add Item +</button>
         </Link>
+        <select onChange={handleChange} className="filter-btn">
+          <option value="All">All</option>
+            <option value="Manya">Manya</option>
+            <option value="Hanshul">Hanshul</option>
+            <option value="Ishita">Ishita</option>
+          </select>
       </div>
       <div className="content">
-        {data.map((item, id) => {
+        {filteredUsers.map((item, id) => {
           return (
             <div className="items" key={id}>
               <div className="upper">
@@ -92,6 +110,7 @@ function Data() {
                   <h1 className="item-name">Item Name: {item.item}</h1>
                   <h2 className="person-name">Person : {item.person}</h2>
                   <h3 className="origin">Origin : {item.country}</h3>
+                  {item.created_by && <h3 className="origin">Created By : {item.created_by}</h3>}
                 </div>
                 <img className="images" src={item.imageUrl}></img>
               </div>

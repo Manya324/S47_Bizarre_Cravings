@@ -25,8 +25,11 @@ const DataSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    created_by: {
+        type: String,
+    }
 });
 
 const Modal = mongoose.model("weird_items_eaten_list", DataSchema);
 
-module.exports = Modal;
+module.exports = Modal; 
