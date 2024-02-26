@@ -10,7 +10,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/loginUser", {
+      const res = await axios.post("https://bizarre-cravings.onrender.com/loginUser", {
         username,
         password,
       });

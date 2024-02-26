@@ -16,7 +16,7 @@ function NewPage() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000", {
+      .post("https://bizarre-cravings.onrender.com", {
         serial: serial,
         item: item,
         person: person,

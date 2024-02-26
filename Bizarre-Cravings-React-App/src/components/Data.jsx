@@ -11,7 +11,7 @@ function Data() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000")
+      .get("https://bizarre-cravings.onrender.com")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
     console.log(data);
@@ -37,7 +37,7 @@ function Data() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/deleteItem/${id}`)
+      .delete(`https://bizarre-cravings.onrender.com/deleteItem/${id}`)
       .then((res) => {
         console.log(res.data);
         window.location.reload();

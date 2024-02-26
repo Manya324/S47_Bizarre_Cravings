@@ -14,7 +14,7 @@ function UpdateItem() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/getItem/` + id)
+      .get(`https://bizarre-cravings.onrender.com/getItem/` + id)
       .then((res) => {
         console.log(res);
         setSerial(res.data.serial);
@@ -30,7 +30,7 @@ function UpdateItem() {
   const update = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/updateItem/` + id, {
+      .put(`https://bizarre-cravings.onrender.com/updateItem/` + id, {
         serial,
         item,
         person,
